@@ -1,0 +1,129 @@
+/*
+  jbeard.dev / jbeardllc.com website
+  (c) 2022 Josh Beard
+*/
+
+/* aldrich-regular - latin */
+@font-face {
+  font-family: 'Aldrich';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/aldrich-v11-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/aldrich-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/aldrich-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/aldrich-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/aldrich-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/aldrich-v11-latin-regular.svg#Aldrich') format('svg'); /* Legacy iOS */
+}
+
+:root {
+    /* font-size: calc(1rem + ((1vw - 0.48em) * 0.6944)); */
+    /* font-size: 62.5%; */
+    min-height: 0vw;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Aldrich';
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(#42047e, #07f49e);
+  background-size: 300% 300%;
+  font-size: calc(22px + (22 - 12) * ((100vw - 300px) / (1600 - 300)));
+}
+
+a {
+  color: #97e8ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+#main {
+  text-align: center;
+  margin: 0 auto;
+  color: #efefef;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100%;
+  margin-bottom: 8px;
+}
+
+#main ul {
+  list-style-type: none;
+  list-style-position: inside;
+}
+
+header {
+  margin-top: 20px;
+}
+header h1 {
+  text-shadow: 2px 2px 5px #1d1d1d;
+}
+
+#content,
+#contact,
+#topics,
+#footer {
+  max-width: 300px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px #1d1d1d;
+}
+
+#content {
+  margin-top: 20px;
+  font-size: 20px;
+  flex-grow: 1;
+  line-height: 1.2;
+  color: #e4e4e4;
+}
+
+#content li {
+  margin: 8px 0 18px 0;
+}
+
+#contact {
+  margin-top: 22px;
+  border-top: 1px solid #2e5388;
+  text-shadow: none;
+}
+
+#contact li {
+  font-size: 18px;
+}
+
+span.email {
+  font-family: monospace;
+}
+
+#topics {
+  font-size: 18px;
+}
+
+#topics li {
+  margin: 4px 0 8px 0;
+}
+
+#footer {
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+#footer span {
+  font-size: 16px;
+}
+
