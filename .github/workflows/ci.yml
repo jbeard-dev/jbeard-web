@@ -36,7 +36,33 @@ jobs:
         uses: actions/download-artifact@master
         with:
           name: src
-      - name: Upload to S3
+
+# == jbeardllc.com deployment
+      - name: jbeardllc.com - Upload to S3
+        uses: jakejarvis/s3-sync-action@master
+        with: &upload
+          args: --acl public-read --follow-symlinks --delete
+            --exclude ".git\*"
+            --exclude "README.md"
+            --exclude "docker-compose.yml"
+        env:
+          AWS_S3_BUCKET: ${{ secrets.JBEARDLLC_AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.JBEARDLLC_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.JBEARDLLC_AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'us-west-2'
+          SOURCE_DIR: '.'
+
+      - name: jbeardllc.com - Invalidate CloudFront Cache
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: ${{ secrets.JBEARDLLC_CF_DISTRIBUTION }}
+          PATHS: "/*"
+          AWS_REGION: "us-east-1"
+          AWS_ACCESS_KEY_ID: ${{ secrets.JBEARDLLC_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.JBEARDLLC_AWS_SECRET_ACCESS_KEY }}
+
+# == jbeard.dev deployment
+      - name: jbeard.dev - Upload to S3
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
@@ -44,17 +70,18 @@ jobs:
             --exclude "README.md"
             --exclude "docker-compose.yml"
         env:
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_S3_BUCKET: ${{ secrets.JBEARDDEV_AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.JBEARDDEV_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.JBEARDDEV_AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: 'us-west-2'
           SOURCE_DIR: '.'
 
-      - name: Invalidate CloudFront Cache
+      - name: jbeard.dev - Invalidate CloudFront Cache
         uses: chetan/invalidate-cloudfront-action@v2
         env:
-          DISTRIBUTION: ${{ secrets.CF_DISTRIBUTION }}
+          DISTRIBUTION: ${{ secrets.JBEARDDEV_CF_DISTRIBUTION }}
           PATHS: "/*"
           AWS_REGION: "us-east-1"
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.JBEARDDEV_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.JBEARDDEV_AWS_SECRET_ACCESS_KEY }}
+
