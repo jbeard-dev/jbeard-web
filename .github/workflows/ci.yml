@@ -25,6 +25,7 @@ jobs:
           path: |
             index.html
             error.html
+            pgp.asc.txt
             assets/
 
   deploy:
