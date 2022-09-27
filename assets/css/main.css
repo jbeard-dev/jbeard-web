@@ -92,7 +92,7 @@ header h1 {
   color: #e4e4e4;
 }
 
-#content li {
+li {
   margin: 8px 0 18px 0;
 }
 
@@ -102,7 +102,7 @@ header h1 {
   text-shadow: none;
 }
 
-#contact li {
+li {
   font-size: 18px;
 }
 
@@ -114,7 +114,7 @@ span.email {
   font-size: 18px;
 }
 
-#topics li {
+li {
   margin: 4px 0 8px 0;
 }
 
