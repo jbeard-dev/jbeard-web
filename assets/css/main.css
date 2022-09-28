@@ -38,7 +38,7 @@ body {
 
 body {
   background: linear-gradient(#42047e, #07f49e);
-  background-size: 300% 300%;
+  background-size: 100% 170%;
   font-size: calc(22px + (22 - 12) * ((100vw - 300px) / (1600 - 300)));
 }
 
@@ -52,6 +52,12 @@ a:hover {
   color: #fff;
 }
 
+li {
+  margin: 4px 0 8px 0;
+  font-size: 16px;
+}
+
+/* ---- Main container --- */
 #main {
   text-align: center;
   margin: 0 auto;
@@ -68,25 +74,28 @@ a:hover {
   list-style-position: inside;
 }
 
+/* ---- Header ---- */
 header {
   margin-top: 20px;
 }
 header h1 {
-  text-shadow: 2px 2px 5px #1d1d1d;
+  text-shadow: 1px 1px 3px #1d1d1d;
   color: #fff;
 }
-
 header h2 {
   font-size: 20px;
   margin-top: 18px;
+  font-family: monospace;
+  letter-spacing: 1px;
+  font-weight: normal;
 }
 
+/* ---- Main content ---- */
 #content,
-#topics,
-#footer {
+#footer,
+#topics {
   max-width: 300px;
   margin: 0 auto;
-  text-shadow: 1px 1px 2px #1d1d1d;
 }
 
 #content {
@@ -97,25 +106,20 @@ header h2 {
   color: #e4e4e4;
 }
 
-li {
-  margin: 4px 0 8px 0;
-  font-size: 16px;
-}
-
-span.email {
-  font-family: monospace;
-}
-
 #topics {
   font-size: 18px;
 }
 
+/* ---- Footer ---- */
 #footer {
-  margin-bottom: 10px;
   flex-shrink: 0;
+  border-top: 1px solid #299d9e;
+  width: 300px;
+  padding-top: 10px;
+  font-size: 14px;
 }
 
-#footer span {
-  font-size: 16px;
+#footer a {
+  color: #ffffff;
 }
 
