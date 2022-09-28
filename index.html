@@ -5,12 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <!-- Open Graph -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="jbeard.dev">
+  <meta property="og:description" content="IT services from Josh Beard">
+  <meta property="og:site_name" content="jbeard.dev">
+
   <title>jbeard</title>
-  <meta name="description" content="IT Services by Josh Beard">
+  <meta name="description" content="IT services from Josh Beard">
 
   <link rel="stylesheet" href="assets/css/main.css">
   <link href="assets/fonts/fa/css/all.css" rel="stylesheet" />
-  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png" >
+  <link rel="shortcut icon" type="image/png" href="/favicon.png" >
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 </head>
 
 <html>
@@ -21,6 +35,10 @@
         <div id="main">
             <header>
                 <h1>jbeard</h1>
+                <h2>
+                  <a href="mailto:hello@jbeard.dev" title="hello@jbeard.dev"><i class="fas fa-fw
+                     fa-envelope"></i>&nbsp;<span class="email">hello@jbeard.dev</span></a>
+                </h2>
             </header>
             <div id="content">
                 <ul id="topics">
@@ -34,20 +52,17 @@
                   <li>Infrastructure as Code</li>
                   <li>Serverless</li>
                   <li>Containers</li>
+                  <li>Technical Writing</li>
                   <li>and more</li>
                 </ul>
                 <ul id="contact">
-                    <li>
-                        <a href="mailto:hello@jbeard.dev" title="hello@jbeard.dev"><i class="fas fa-fw
-                        fa-envelope"></i>&nbsp;<span class="email">hello@jbeard.dev</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/joshbeard/"><i class="fab fa-fw fa-github"></i>&nbsp;<span>GitHub</span></a>
-                    </li>
                 </ul>
             </div>
             <div id="footer">
               <ul>
+                <li>
+                    <a href="https://github.com/joshbeard/"><i class="fab fa-fw fa-github"></i>&nbsp;<span>GitHub</span></a>
+                </li>
                 <li>
                   <a href="/pgp.asc.txt" title="PGP key"><i class="fas fa-fw
                   fa-key"></i>&nbsp;<span>PGP key</span></a>
