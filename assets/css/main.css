@@ -1,32 +1,10 @@
-/*
-  jbeard.dev / jbeardllc.com website
-  (c) 2022 Josh Beard
-*/
-
-/* aldrich-regular - latin */
-@font-face {
-  font-family: 'Aldrich';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/aldrich-v11-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('../fonts/aldrich-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/aldrich-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/aldrich-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/aldrich-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/aldrich-v11-latin-regular.svg#Aldrich') format('svg'); /* Legacy iOS */
-}
-
 :root {
-    /* font-size: calc(1rem + ((1vw - 0.48em) * 0.6944)); */
-    /* font-size: 62.5%; */
     min-height: 0vw;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Aldrich';
 }
 
 html,
@@ -37,9 +15,7 @@ body {
 }
 
 body {
-  background: linear-gradient(#42047e, #07f49e);
-  background-size: 100% 170%;
-  font-size: calc(22px + (22 - 12) * ((100vw - 300px) / (1600 - 300)));
+  background: linear-gradient(0deg, #213955, #1b1b1b);
 }
 
 a {
@@ -52,74 +28,21 @@ a:hover {
   color: #fff;
 }
 
-li {
-  margin: 4px 0 8px 0;
-  font-size: 16px;
-}
-
-/* ---- Main container --- */
 #main {
-  text-align: center;
+  text-align: left;
   margin: 0 auto;
   color: #efefef;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  min-height: 100%;
   margin-bottom: 8px;
+  padding: 20px;
 }
 
-#main ul {
-  list-style-type: none;
-  list-style-position: inside;
+pre {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 22px;
 }
 
-/* ---- Header ---- */
-header {
-  margin-top: 20px;
+@media (max-width: 768px) {
+    pre#jbeard {
+        font-size: 8px;
+    }
 }
-header h1 {
-  text-shadow: 1px 1px 3px #1d1d1d;
-  color: #fff;
-}
-header h2 {
-  font-size: 20px;
-  margin-top: 38px;
-  font-family: monospace;
-  letter-spacing: 1px;
-  font-weight: normal;
-}
-
-/* ---- Main content ---- */
-#content,
-#footer,
-#topics {
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-#content {
-  margin-top: 20px;
-  font-size: 20px;
-  flex-grow: 1;
-  line-height: 1.2;
-  color: #e4e4e4;
-}
-
-#topics {
-  font-size: 18px;
-}
-
-/* ---- Footer ---- */
-#footer {
-  flex-shrink: 0;
-  border-top: 1px solid #299d9e;
-  width: 300px;
-  padding-top: 10px;
-  font-size: 14px;
-}
-
-#footer a {
-  color: #ffffff;
-}
-
