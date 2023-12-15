@@ -6,7 +6,7 @@ on:
       - actions
 
 jobs:
-  minify:
+  build: 
     name: Minify
     runs-on: ubuntu-latest
     container: thekevjames/minify:2.5.2
