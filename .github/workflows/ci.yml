@@ -6,30 +6,12 @@ on:
       - actions
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Source
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.ref }}
-
-      - uses: actions/upload-artifact@master
-        with:
-          name: src
-          path: .
-
   minify:
     name: Minify
     runs-on: ubuntu-latest
     container: thekevjames/minify:2.5.2
     needs: build
     steps:
-      - uses: actions/download-artifact@master
-        with:
-          name: src
-
       - name: Minify
         run: minify --recursive --output . .
 
