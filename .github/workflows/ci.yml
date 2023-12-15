@@ -15,8 +15,23 @@ jobs:
         with:
           ref: ${{ github.ref }}
 
+      - uses: actions/upload-artifact@master
+        with:
+          name: src
+          path: .
+
+  minify:
+    name: Minify
+    runs-on: ubuntu-latest
+    container: thekevjames/minify:2.5.2
+    needs: build
+    steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: src
+
       - name: Minify
-        uses: anthonyftwang/minify-action@v1.0.1
+        run: minify --recursive --output . .
 
       - name: Upload Artifact
         uses: actions/upload-artifact@master
