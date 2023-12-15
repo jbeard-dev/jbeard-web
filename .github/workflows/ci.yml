@@ -10,7 +10,6 @@ jobs:
     name: Minify
     runs-on: ubuntu-latest
     container: thekevjames/minify:2.5.2
-    needs: build
     steps:
       - name: Minify
         run: minify --recursive --output . .
